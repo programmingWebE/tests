@@ -1,0 +1,185 @@
+@import 'responsive'
+
+.main-header
+	background-image: url(./img/bg-header.png)
+	background-repeat: no-repeat
+	background-size: cover
+	background-position: top center
+	padding-top: 35px
+	min-height: 100vh
+	+media(sm)
+		padding-top: 25px
+	&__wrap
+		position: relative
+		max-width: 800px
+		margin: 0 auto
+		padding-bottom: 25px
+		+media(sm)
+			padding-bottom: 15px
+		&:after
+			position: absolute
+			display: inline-block
+			content: ' '
+			left: 0px
+			right: 0px
+			bottom: 0px
+			width: 100%
+			height: 1px
+			margin: 0 auto
+			background: radial-gradient(circle at center, #6C6D72, transparent)
+
+	&__list
+		display: flex
+		justify-content: center
+		position: relative
+		+media(sm)
+			display: none
+			width: 100%
+			top: 100%
+			left: 0
+			z-index: 8
+			position: absolute
+			padding: 0px	
+			background-color: #ffffff
+			max-height: calc(100vh - 70px)
+			overflow-y: auto
+			overflow-x: hidden
+
+	&__link
+		font-size: 16px
+		line-height: 1.5	
+		display: block
+		color: #ffffff
+		padding: 0px 15px
+		text-transform: uppercase
+		transition: 0.3s color, 0.3s background-color
+		+media(lgsm)
+			font-size: 15px
+		+media(sm)
+			padding: 6px 10px 
+			background-color: #6C6D72
+
+		&:hover
+			color: #fff
+			text-shadow: 0px 0.5px 0px #fff, 0.5px 0px 0px #fff, 0px -0.5px 0px #fff, -0.5px 0px 0px #fff
+			+media(sm)
+				text-shadow: none
+		&--active
+			color: #ffffff
+			text-shadow: 0px 0.5px 0px #fff, 0.5px 0px 0px #fff, 0px -0.5px 0px #fff, -0.5px 0px 0px #fff
+			+media(sm)
+				background-color: #ffffff
+				color: #6C6D72
+				text-shadow: none
+			&:hover
+				+media(sm)
+					text-shadow: none
+					color: #6C6D72
+
+
+	&__content
+		display: flex
+		justify-content: center
+		align-items: flex-end
+		padding-top: 11em
+		+media(md)
+			flex-direction: column
+			align-items: center
+		.main-header__col:first-child
+			margin-left: 82px
+			padding-right: 65px
+			+media(md)
+				margin-left: 0px
+				padding-right: 0px
+		.main-header__col:last-child
+			padding-left: 85px
+			+media(md)
+				padding-left: 0px
+
+	&__col
+		font-size: 48px
+		line-height: 1
+		color: #fff
+		text-transform: uppercase
+		font-weight: 900
+		+media(lgxs)
+			font-size: 35px
+		+media(md)
+			padding-bottom: 15px
+
+	&__logo
+		max-width: 185px
+		width: 100%
+		+media(md)
+			order: -1
+			margin: 0 auto
+			margin-bottom: 25px
+			max-width: 140px
+		+media(sm)
+			max-width: 110px
+		img
+			display: block
+			width: 100%
+
+	&__description
+		font-size: 16px
+		line-height: 1.2
+		color: #fff
+		padding-right: 20px
+		text-transform: uppercase
+		font-weight: bold
+
+
+.mobile-wrap
+	display: none
+	align-items: center
+	justify-content: space-between
+	cursor: pointer
+	+media(sm)
+		display: flex
+		width: 100%
+		padding: 5px 20px
+
+.line-burger
+	display: block
+	position: absolute
+	top: 50%
+	left: 0
+	width: 25px
+	height: 3px
+	background-color: #ffffff
+	transition: 0.5s width
+	&:after,
+	&:before
+		content: ''
+		position: absolute
+		width: 25px
+		height: 3px
+		background-color: #ffffff
+		left: 0
+		transition: 0.5s
+	&:after
+		top: calc(100% + 5px)
+	&:before
+		bottom: calc(100% + 5px)
+
+.line-active
+	width: 0
+	&:after
+		top: 9px
+		transform: rotate(-45deg)
+		transform-origin: 0 0
+	&:before
+		bottom: 9px
+		transform: rotate(45deg)
+		transform-origin: 0 100%
+
+.main-nav__toggle
+	position: relative
+	cursor: pointer
+	display: none
+	width: 25px
+	height: 25px
+	margin-top: -5px
+	+media(sm)
+		display: block
